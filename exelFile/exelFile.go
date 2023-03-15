@@ -3,8 +3,8 @@ package exelFile
 import (
 	"database/sql"
 	"fmt"
-	"log"
 	"strconv"
+	"time"
 
 	lg "github.com/bahodurnazarov/exel/utils"
 	"github.com/xuri/excelize/v2"
@@ -22,8 +22,8 @@ type User struct {
 func MakeFile(data *sql.Rows) {
 	f, err := excelize.OpenFile("simple.xlsx")
 	if err != nil {
-        log.Fatal(err)
-    }
+		lg.Server.Fatal(err)
+	}
 
 	var myUser User
 	var ff int = 0
@@ -32,20 +32,20 @@ func MakeFile(data *sql.Rows) {
 		if err != nil {
 			lg.Errl.Panic(err)
 		}
-		for i := 0; i < myUser.ID; i++ {
-
-			fmt.Println(myUser.ID, " ", myUser.Name)
-		}
 		ff++
-		f.SetCellValue("Sheet1", "B"+strconv.Itoa(+3), myUser.ID)
-		f.SetCellValue("Sheet1", "C"+strconv.Itoa(+3), myUser.Name)
-		f.SetCellValue("Sheet1", "D"+strconv.Itoa(+3), myUser.Password)
-		f.SetCellValue("Sheet1", "E"+strconv.Itoa(+3), myUser.Email)
 
 		//lg.Server.Println(myUser.ID, " ", myUser.Name)
 
+		fmt.Println("ID: ", myUser.Name, myUser.Password)
+		f.SetCellValue("Sheet1", "B"+strconv.Itoa(2+ff), myUser.ID)
+		f.SetCellValue("Sheet1", "C"+strconv.Itoa(2+ff), myUser.Name)
+		f.SetCellValue("Sheet1", "D"+strconv.Itoa(2+ff), myUser.Email)
+		f.SetCellValue("Sheet1", "E"+strconv.Itoa(2+ff), myUser.Password)
 	}
+	now := time.Now()
+	f.SetCellValue("Sheet1", "B1", now.Format(time.ANSIC))
+
 	if err := f.SaveAs("simple.xlsx"); err != nil {
-		log.Fatal(err)
+		lg.Server.Fatal(err)
 	}
 }

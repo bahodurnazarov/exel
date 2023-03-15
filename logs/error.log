@@ -1,1 +1,2 @@
 time="2023-03-14T14:56:50+05:00" level=panic msg="sql: Scan error on column index 0, name \"user_id\": unsupported Scan, storing driver.Value type int64 into type *[]int"
+time="2023-03-15T10:22:59+05:00" level=panic msg="sql: Scan error on column index 0, name \"user_id\": unsupported Scan, storing driver.Value type int64 into type *[]int"
