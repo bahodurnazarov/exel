@@ -1,2 +1,12 @@
 INFO: 2023/03/13 18:18:18 conn.go:23: Successfully connected!
 INFO: 2023/03/13 18:19:33 conn.go:23: Successfully connected!
+INFO: 2023/03/14 10:01:23 select.go:33: 1   bahodur
+INFO: 2023/03/14 10:01:23 select.go:33: 2   nazarov
+INFO: 2023/03/14 14:13:41 select.go:33: 1   bahodur
+INFO: 2023/03/14 14:13:41 select.go:33: 2   nazarov
+INFO: 2023/03/14 14:26:00 select.go:34: 1   bahodur
+INFO: 2023/03/14 14:26:00 select.go:34: 2   nazarov
+INFO: 2023/03/14 14:32:59 select.go:36: 1   bahodur
+INFO: 2023/03/14 14:32:59 select.go:36: 2   nazarov
+INFO: 2023/03/14 14:42:54 exelFile.go:32: 1   bahodur
+INFO: 2023/03/14 14:42:54 exelFile.go:32: 2   nazarov
